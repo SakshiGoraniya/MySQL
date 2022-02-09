@@ -1,5 +1,6 @@
 USE sql_store;
 
+create table users (id int,age int,name varchar(30));
 
 /*insert*/
 INSERT INTO customers(first_name, phone, points)
@@ -8,7 +9,13 @@ VALUES
  ('divu', '1234', 10);
 /*select statement*/
 
-SELECT * FROM sql_store.customers ;
+INSERT INTO `customers` VALUES (11,'divu','jadeja','1995-03-28','781-992-9754','prasth','gujarat','IN',2200);
+ INSERT INTO `customers` VALUES (15,'divu','jadeja','ksd','gujarat','IN',9770);
+INSERT INTO `customers` VALUES (1,'sakshi','MacCaffrey','1986-03-28','781-932-9754','0 Sage Terrace','Waltham','MA',2273);
+INSERT INTO `customers` VALUES  (13,'divu','jadeja','1995-08-13','ksd','gujarat','IN',9770);
+  
+  
+  SELECT * FROM sql_store.customers ;
 -- WHERE customer_id=1;
 -- ORDER BY first_name;
 
@@ -40,6 +47,25 @@ WHERE birth_date > '1990-01-01' OR points > 1000 ;
 SELECT *
 FROM customers
 WHERE NOT (birth_date > '1990-01-01');   
+
+#alter table
+ALTER TABLE users
+ADD Email varchar(255);
+
+#alter row
+
+UPDATE customers set points=1000 where customer_id=1;
+select * from customers;
+
+UPDATE users set Email='sakshi@gmail.com' where id=1;
+select * from users;
+
+
+
+
+
+
+
 
 /*IN */
 -- To find customers in any of these states: VA, NY, CA
@@ -147,3 +173,5 @@ UNION
 SELECT name
 FROM shippers ;
 
+SELECT first_name FROM customers 
+WHERE state= 'VA'AND points > 900;
