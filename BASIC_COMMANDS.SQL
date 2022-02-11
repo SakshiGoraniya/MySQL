@@ -57,10 +57,16 @@ ADD Email varchar(255);
 UPDATE customers set points=1000 where customer_id=1;
 select * from customers;
 
-UPDATE users set Email='sakshi@gmail.com' where id=1;
+UPDATE users set Email='khushi@yahoo',name='khushi' where id=2;
+UPDATE users set age= 20 where id=1;
 select * from users;
 
 
+insert into users values(3,21,'khushi','khushi@yahoo');
+insert into users values(4,21,'isnhiya','isnhiya@gmail');
+insert into users values(5,21,'ishi','ishi@yahoo');
+
+delete from users where id=2;
 
 
 
@@ -169,6 +175,7 @@ CROSS JOIN orders;
  
 SELECT name, address
 FROM customers
+
 UNION
 SELECT name
 FROM shippers ;
