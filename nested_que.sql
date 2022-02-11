@@ -126,7 +126,7 @@ SELECT client.client_name from client where client.branch_id in
  (Select employee.emp_id from employee where employee.first_name='inshiya'));
  
  
- -- Find the names of all clients who have spent more than 100,000 dollars
+ -- Find the names of all clients who have spent more than 1000000
  SELECT client.client_name
 FROM client
 WHERE client.client_id IN (
@@ -147,3 +147,10 @@ WHERE employee.emp_id IN (
                          )
 AND employee.branch_id = 2;
 
+
+
+/*joins*/
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+JOIN branch    -- LEFT JOIN, RIGHT JOIN
+ON employee.emp_id = branch.mgr_id;
